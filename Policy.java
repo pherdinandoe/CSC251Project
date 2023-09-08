@@ -1,5 +1,5 @@
 public class Policy {
-   
+   //declare all private class fields
    private String policyNum;
    private String providerName;
    private String firstName, lastName;
@@ -7,14 +7,15 @@ public class Policy {
    private int age;
    private double height, weight;
    
+   //no-arg constructor that sets default values for all fields
    public Policy() {
-      //set default values
    }
    
+   //constructor that takes arguments for all class fields
    public Policy(String iPolicyNum, String iProviderName, String iFirstName, 
                   String iLastName, String iSmokingStatus, int iAge, double iHeight, 
                   double iWeight) {
-      //accepts arguments
+      //intialize all class fields
       policyNum = iPolicyNum;
       providerName = iProviderName;
       firstName = iFirstName;
@@ -25,7 +26,7 @@ public class Policy {
       weight = iWeight;
    }
    
-   //setter methods
+   //setter methods for all fields
    public void setPolicyNum(String a) {
       policyNum = a;
    }
@@ -58,7 +59,7 @@ public class Policy {
       weight = h;
    }
    
-   //getter methods
+   //getter methods for all class fields
    public String getPolicyNum() {
       return policyNum;
    }
@@ -91,11 +92,13 @@ public class Policy {
       return weight;
    }
    
+   //method to calculate BMI
    public double calculateBMI() {
       double BMI = (weight * 703 ) / (height * height);
       return BMI;
    }
    
+   //method to calculate policy price
    public double calculatePrice() {
       double price = 600;
       double BMI = calculateBMI();

@@ -31,8 +31,7 @@ public class Project_Fernando_Bonilla {
       
       System.out.print("Please enter the Policyholder’s Age: ");
       age = keyboard.nextInt();
-      //clear newline character from buffer
-      keyboard.nextLine();
+      keyboard.nextLine(); //clear newline character from buffer
       
       System.out.print("Please enter the Policyholder’s Smoking Status (smoker/non-smoker): ");
       smokingStatus = keyboard.nextLine();
