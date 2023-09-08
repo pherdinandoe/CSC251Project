@@ -4,14 +4,16 @@ public class Policy {
    private String providerName;
    private String firstName, lastName;
    private String smokingStatus;
-   private int age, height, weight;
+   private int age;
+   private double height, weight;
    
    public Policy() {
       //set default values
    }
    
    public Policy(String iPolicyNum, String iProviderName, String iFirstName, 
-                  String iLastName, String iSmokingStatus, int iAge, int iHeight, int iWeight) {
+                  String iLastName, String iSmokingStatus, int iAge, double iHeight, 
+                  double iWeight) {
       //accepts arguments
       policyNum = iPolicyNum;
       providerName = iProviderName;
@@ -77,20 +79,20 @@ public class Policy {
       return smokingStatus;
    }
    
-   public int getAge() {
+   public double getAge() {
       return age;
    }
    
-   public int getHeight() {
+   public double getHeight() {
       return height;
    }
    
-   public int getWeight() {
+   public double getWeight() {
       return weight;
    }
    
    public double calculateBMI() {
-      double BMI = (double) (weight * 703 ) / (height * height);
+      double BMI = (weight * 703 ) / (height * height);
       return BMI;
    }
    
