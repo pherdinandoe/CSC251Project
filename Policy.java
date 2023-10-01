@@ -1,5 +1,5 @@
 public class Policy {
-   //dewclare all private class fields
+   //declare all private class fields
    private String policyNum;
    private String providerName;
    private String firstName, lastName;
