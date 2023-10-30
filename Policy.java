@@ -3,9 +3,12 @@ public class Policy {
    private String policyNum;
    private String providerName;
    private PolicyHolder policyHolder;
+   //static field to count number of Policy objects created
+   private static int instanceCount = 0;
 
    //no-arg constructor that sets default values for all fields
    public Policy() {
+   instanceCount++;
    }
    
    //constructor that takes arguments for all class fields
@@ -14,6 +17,7 @@ public class Policy {
       this.policyNum = policyNum;
       this.providerName = providerName;
       this.policyHolder = new PolicyHolder(policyHolder); //assign copy of PolicyHolder object
+      instanceCount++;
    }
    
    /**
@@ -96,6 +100,14 @@ public class Policy {
                               "\nProvider Name: %s\n",
                               policyNum, providerName);
       return str; 
+   }
+   
+   /**
+      The getInstanceCount method returns the number of policy objects created
+      @return The number of policy objects created
+   */
+   public int getInstanceCount() {
+      return instanceCount;
    }
       
 }
