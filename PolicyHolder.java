@@ -9,6 +9,17 @@ public class PolicyHolder {
    public PolicyHolder() {
    }
    
+   //constructor with every field as a parameter
+   public PolicyHolder(String firstName, String lastName, String smokingStatus, 
+                       int age, double height, double weight) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.smokingStatus = smokingStatus;
+      this.age = age;
+      this.height = height;
+      this.weight = weight;
+   }
+   
    //copy constructor
    public PolicyHolder(PolicyHolder object2) {
       firstName = object2.firstName;
@@ -131,14 +142,15 @@ public class PolicyHolder {
       @return The data in the object's fields
    */
    public String toString() {
-      String str = String.format("Policy Holder Information" +
-                                 "\nFirst Name: %s" +
-                                 "\nLast Name: %s" +
-                                 "\nSmoking Status: %s" +
-                                 "\nAge: %d" +
-                                 "\nHeight: %.2f" +
-                                 "\nWeight: %.2f\n", 
-                                 firstName, lastName, smokingStatus, age, height, weight);
+      String str = String.format("\nPolicyholder's First Name: %s" +
+                                 "\nPolicyholder's Last Name: %s" +
+                                 "\nPolicyholder's Smoking Status: %s" +
+                                 "\nPolicyholder's Age: %d" +
+                                 "\nPolicyholder's Height: %.1f" + " inches" +
+                                 "\nPolicyholder's Weight: %.1f" + " pounds" +
+                                 "\nPolicyholder's BMI: %.2f", 
+                                 firstName, lastName, smokingStatus, age, height, 
+                                 weight, this.calculateBMI());
       return str;
    }
 
