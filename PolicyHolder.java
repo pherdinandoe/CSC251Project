@@ -125,5 +125,21 @@ public class PolicyHolder {
       double BMI = (weight * 703 ) / (height * height);
       return BMI;
    }
+   
+   /**
+      The toString method converts object field information to a String
+      @return The data in the object's fields
+   */
+   public String toString() {
+      String str = String.format("Policy Holder Information" +
+                                 "\nFirst Name: %s" +
+                                 "\nLast Name: %s" +
+                                 "\nSmoking Status: %s" +
+                                 "\nAge: %d" +
+                                 "\nHeight: %.2f" +
+                                 "\nWeight: %.2f\n", 
+                                 firstName, lastName, smokingStatus, age, height, weight);
+      return str;
+   }
 
 }
