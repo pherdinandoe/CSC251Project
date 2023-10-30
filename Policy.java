@@ -84,5 +84,18 @@ public class Policy {
          
       return price;
    }
+   
+   /**
+      The toString method converts object field information to a String
+      @return The data in the object's fields
+   */
+   public String toString() {
+      String str = String.format(policyHolder.toString() + 
+                              "Policy Information" +
+                              "\nPolicy Number: %d" +
+                              "\nProvider Name: %s\n",
+                              policyNum, providerName);
+      return str; 
+   }
       
 }
