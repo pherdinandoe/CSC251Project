@@ -41,9 +41,12 @@ public class Project_Fernando_Bonilla {
          inputFile.nextLine(); //consume newline
          weight = inputFile.nextDouble();
          
-         //create new Policy object
-         Policy newPolicy = new Policy(policyNum, providerName, firstName, lastName, 
+         //create new PolicyHolder object
+         PolicyHolder newPolicyHolder = new PolicyHolder(firstName, lastName, 
                                        smokingStatus, age, height, weight);
+         
+         //create new Policy object
+         Policy newPolicy = new Policy(policyNum, providerName, newPolicyHolder);
          
          //consume newline characters if file has more data
          if(inputFile.hasNext())
@@ -60,6 +63,7 @@ public class Project_Fernando_Bonilla {
       //close the file
       inputFile.close();
       
+      /*
       //display policy objects from ArrayList
       for(int i =0; i < policies.size(); i++) {
          System.out.println("Policy Number: " + policies.get(i).getPolicyNum());
@@ -75,17 +79,27 @@ public class Project_Fernando_Bonilla {
          System.out.printf("Policy Price: $%.2f", policies.get(i).calculatePrice());
          System.out.println();
          System.out.println();
+         */
+         
+      //display policy objects from ArrayList using implicit call to the toString method
+      for(int i =0; i < policies.size(); i++) {
+         System.out.println(policies.get(i));
          
          //add to smokers or non-smokers
-         if (policies.get(i).getSmokingStatus().equals("smoker"))
+         if (policies.get(i).getPolicyHolder().getSmokingStatus().equals("smoker"))
             totalSmokers++;
          else
             totalNonSmokers++;
       }
       
+      //display total number of policy objects created using static class field
+      System.out.println();
+      System.out.println("There were " + policies.get(0).getInstanceCount() + " Policy objects created.");
       //display total smokers and non-smokers
+      System.out.println();
       System.out.println("The number of policies with a smoker is: " + totalSmokers);
       System.out.println("The number of policies with a non-smoker is: " + totalNonSmokers);
+      
       
       
       /**
