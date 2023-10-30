@@ -94,11 +94,11 @@ public class Policy {
       @return The data in the object's fields
    */
    public String toString() {
-      String str = String.format(policyHolder.toString() + 
-                              "Policy Information" +
-                              "\nPolicy Number: %d" +
-                              "\nProvider Name: %s\n",
-                              policyNum, providerName);
+      String str = String.format("\nPolicy Number: %s" +
+                                 "\nProvider Name: %s" +
+                                 policyHolder.toString() + 
+                                 "\nPolicy Price: $%.2f",
+                                 policyNum, providerName, this.calculatePrice());
       return str; 
    }
    
